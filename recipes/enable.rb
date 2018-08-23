@@ -43,5 +43,6 @@ redis['servers'].each do |current_server|
       notifies :run, 'execute[reload-systemd]', :immediately
     end
   end
+  resource.action << :enable
   resource.action << :start
 end
